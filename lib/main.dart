@@ -4,7 +4,6 @@ import 'package:movies_app/ui/screens/home/home.dart';
 import 'package:movies_app/ui/screens/movie%20details/movie_details.dart';
 import 'package:movies_app/ui/screens/onboarding/onboarding.dart';
 
-import 'ui/screens/movie details/movie_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Onboarding.routeName,
+      initialRoute: Auth.routeName,
       routes: {
         Onboarding.routeName: (context) => Onboarding(),
         Home.routeName: (context) => Home(),
