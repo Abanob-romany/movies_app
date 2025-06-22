@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/ui/screens/auth/login/login.dart';
 
 class Auth extends StatelessWidget {
   static const String routeName = '/auth';
@@ -7,6 +8,6 @@ class Auth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Login();
   }
 }
