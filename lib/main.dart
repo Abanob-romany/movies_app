@@ -4,6 +4,8 @@ import 'package:movies_app/ui/screens/home/home.dart';
 import 'package:movies_app/ui/screens/movie%20details/movie_details.dart';
 import 'package:movies_app/ui/screens/onboarding/onboarding.dart';
 
+import 'ui/screens/movie details/movie_details.dart';
+
 void main() {
   runApp(const MyApp());
 }
