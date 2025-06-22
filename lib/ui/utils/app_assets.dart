@@ -22,4 +22,8 @@ abstract final class AppAssets {
   static const routeLogo = "${_baseImage}route_logo.png";
   static const search = "${_baseImage}search_icon.png";
   static const watchList = "${_baseImage}watch_list_icon.png";
+  static const film1 = "${_baseImage}film1.png";
+  static const film2 = "${_baseImage}film2.png";
+  static const film3 = "${_baseImage}film3.png";
+  static const film4 = "${_baseImage}film4.png";
 }
