@@ -1,0 +1,29 @@
+abstract final class AppAssets {
+  static const _baseImage = "assets/images/";
+  static const appLogo = "${_baseImage}app_logo.png";
+  static const avatar1 = "${_baseImage}avatar1.png";
+  static const avatar2 = "${_baseImage}avatar2.png";
+  static const avatar3 = "${_baseImage}avatar3.png";
+  static const avatar4 = "${_baseImage}avatar4.png";
+  static const avatar5 = "${_baseImage}avatar5.png";  
+  static const avatar6 = "${_baseImage}avatar6.png";
+  static const avatar7 = "${_baseImage}avatar7.png";
+  static const avatar8 = "${_baseImage}avatar8.png";
+  static const avatar9 = "${_baseImage}avatar9.png";
+  static const emailIcon = "${_baseImage}email_icon.png";
+  static const exploreIcon = "${_baseImage}explore_icon.png";
+  static const folderIcon = "${_baseImage}Folder_icon.png";
+  static const homeIcon = "${_baseImage}home_icon.png";
+  static const nameIcon = "${_baseImage}name_icon.png";
+  static const password = "${_baseImage}password_icon.png";
+  static const phone = "${_baseImage}phone_icon.png";
+  static const popcorn = "${_baseImage}popcorn.png";
+  static const profile = "${_baseImage}profile_icon.png";
+  static const routeLogo = "${_baseImage}route_logo.png";
+  static const search = "${_baseImage}search_icon.png";
+  static const watchList = "${_baseImage}watch_list_icon.png";
+  static const film1 = "${_baseImage}film1.png";
+  static const film2 = "${_baseImage}film2.png";
+  static const film3 = "${_baseImage}film3.png";
+  static const film4 = "${_baseImage}film4.png";
+}
