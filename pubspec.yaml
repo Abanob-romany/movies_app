@@ -21,11 +21,30 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+ main
+
+=======
+main
   flutter_lints: ^5.0.0
 
 flutter:
+  assets:
+    - assets/images/logo.png
+    - assets/images/Movies Posters Group.png
+    - assets/images/screen2.png
+    - assets/images/The Godfather 2.png
+    - assets/images/The Godfather 1.png
+    - assets/images/xl_bad-boys-ride-or-die-movie-poster_591dcde0 2.png
+    - assets/images/xl_bad-boys-ride-or-die-movie-poster_591dcde0 1.png
+    - assets/images/xl_9419884_887ed6c7 2.png
+    - assets/images/xl_9419884_887ed6c7 1.png
+    - assets/images/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_9ef86295-4756-4c71-bb4e-20745c5fbc1a 2.png
+    - assets/images/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_9ef86295-4756-4c71-bb4e-20745c5fbc1a 1.png
 
   uses-material-design: true
 
+ main
+=======
   assets:
     - assets/images/
+ main
