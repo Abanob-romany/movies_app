@@ -10,6 +10,7 @@ TextFormField buildTextFormField({
   bool obscureText = false,
   TextStyle? hintStyle,
   TextStyle? style,
+  keyboardType = TextInputType.text,
 }) {
   return TextFormField(
     controller: controller,

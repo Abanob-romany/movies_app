@@ -5,7 +5,7 @@ abstract final class AppAssets {
   static const avatar2 = "${_baseImage}avatar2.png";
   static const avatar3 = "${_baseImage}avatar3.png";
   static const avatar4 = "${_baseImage}avatar4.png";
-  static const avatar5 = "${_baseImage}avatar5.png";  
+  static const avatar5 = "${_baseImage}avatar5.png";
   static const avatar6 = "${_baseImage}avatar6.png";
   static const avatar7 = "${_baseImage}avatar7.png";
   static const avatar8 = "${_baseImage}avatar8.png";
@@ -26,4 +26,5 @@ abstract final class AppAssets {
   static const film2 = "${_baseImage}film2.png";
   static const film3 = "${_baseImage}film3.png";
   static const film4 = "${_baseImage}film4.png";
+  static const forgotPassword = "${_baseImage}Forgot password.png";
 }

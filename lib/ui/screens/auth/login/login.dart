@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/ui/screens/auth/forget%20password/forget_pass.dart';
+import 'package:movies_app/ui/screens/auth/regester/regester.dart';
+import 'package:movies_app/ui/screens/auth/shared/elevated_button_builder.dart';
 import 'package:movies_app/ui/screens/auth/shared/text_form_field_builder.dart';
 import 'package:movies_app/ui/utils/app_assets.dart';
 import 'package:movies_app/ui/utils/app_colors.dart';
@@ -41,7 +44,7 @@ class Login extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: () {
-                          //todo: Handle forgot password
+                          Navigator.pushNamed(context, ForgetPass.routeName);
                         },
                         child: Text(
                           'Forgot Password?',
@@ -51,17 +54,10 @@ class Login extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 22.0),
-                  ElevatedButton(
+                  buildElevatedButton(
+                    text: 'Login',
                     // todo: Handle login
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primaryColor,
-                      minimumSize: const Size(double.infinity, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                    child: Text('Login', style: AppStyle.regular20black),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -71,8 +67,9 @@ class Login extends StatelessWidget {
                         style: AppStyle.regular14White,
                       ),
                       TextButton(
-                        // todo: Handle sign up
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, Regester.routeName);
+                        },
                         child: Text(
                           'create one',
                           style: AppStyle.bold14primary,
@@ -106,20 +103,10 @@ class Login extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 10.0),
-                  ElevatedButton(
-                    // todo: Handle login with Google
+                  buildElevatedButton(
+                    text: 'Login with google',
+                    // todo: Handle login with google
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primaryColor,
-                      minimumSize: const Size(double.infinity, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                    child: Text(
-                      'Login with Google',
-                      style: AppStyle.regular20black,
-                    ),
                   ),
                 ],
               ),
