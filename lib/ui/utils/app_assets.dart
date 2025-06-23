@@ -27,4 +27,7 @@ abstract final class AppAssets {
   static const film3 = "${_baseImage}film3.png";
   static const film4 = "${_baseImage}film4.png";
   static const forgotPassword = "${_baseImage}Forgot password.png";
+  static const doctor1 = "${_baseImage}Doctor Strange 1.png";
+  static const doctor2 = "${_baseImage}Doctor Strange 2.png";
+  static const start = "${_baseImage}start.png";
 }
