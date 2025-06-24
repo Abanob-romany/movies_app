@@ -16,7 +16,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // ✅ Tracks which tab is selected
   int tabIndex = 0;
 
   // ✅ List of tab screens
@@ -30,7 +29,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.transparent,
       body: SafeArea(
         child: screens[tabIndex],
       ),
@@ -42,42 +41,39 @@ class _HomeState extends State<Home> {
             bodySmall: const TextStyle(color: Colors.white70),
           ),
         ),
-        child: Material(
-          elevation: 8, // ✅ Adds shadow below navigation bar
-          child: BottomNavigationBar(
-            currentIndex: tabIndex,
-            onTap: (index) {
-              setState(() {
-                tabIndex = index;
-              });
-            },
-            selectedItemColor: AppColors.primaryColor,
-            unselectedItemColor: AppColors.white,
-            showSelectedLabels: false,
-            items: [
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
+        child: BottomNavigationBar(
+          currentIndex: tabIndex,
+          onTap: (index) {
+            setState(() {
+              tabIndex = index;
+            });
+          },
+          selectedItemColor: AppColors.primaryColor,
+          unselectedItemColor: AppColors.white,
+          showSelectedLabels: false,
+          items: [
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                AppAssets.explore,
+                width: 22,
+                height: 22,
+                color: AppColors.white,
               ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  AppAssets.explore,
-                  width: 22,
-                  height: 22,
-                  color: AppColors.white,
-                ),
-                label: 'Browse',
-              ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Profile',
-              ),
-            ],
-          ),
+              label: 'Browse',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
         ),
       ),
     );
