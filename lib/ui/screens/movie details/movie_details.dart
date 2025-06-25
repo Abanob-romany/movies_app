@@ -6,6 +6,11 @@ import 'package:movies_app/ui/utils/app_styles.dart';
 
 class MovieDetails extends StatelessWidget {
   static const String routeName = '/movie-details';
+  static const List<String> screenShots = [
+    'assets/images/large-screenshot1.png',
+    'assets/images/large-screenshot2.png',
+    'assets/images/large-screenshot3.png',
+  ];
 
   const MovieDetails({super.key});
 
@@ -96,6 +101,7 @@ class MovieDetails extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 10),
                     buildElevatedButton(
@@ -118,6 +124,19 @@ class MovieDetails extends StatelessWidget {
                         ),
                         ratingBuilder(icon: Icons.star_rounded, text: '8.5'),
                       ],
+                    ),
+                    SizedBox(height: 16),
+                    Text('Screen shots', style: AppStyle.bold24White),
+                    ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4.0),
+                          child: Image(image: AssetImage(screenShots[index])),
+                        );
+                      },
+                      itemCount: screenShots.length,
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
                     ),
                   ],
                 ),
