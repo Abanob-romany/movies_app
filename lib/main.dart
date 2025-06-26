@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       initialRoute: Onboarding.routeName,
 
       routes: {
@@ -53,6 +54,17 @@ class MyApp extends StatelessWidget {
         }
 
 >>>>>>> Stashed changes
+=======
+      initialRoute: Home.routeName,
+      onGenerateRoute: (settings) {
+        if (settings.name == MovieDetails.routeName) {
+          final movie = settings.arguments as Movie;
+          return MaterialPageRoute(
+            builder: (_) => MovieDetails(movie: movie),
+          );
+        }
+
+>>>>>>> Stashed changes
         final routes = <String, WidgetBuilder>{
           Onboarding.routeName: (context) => Onboarding(),
           Home.routeName: (context) => Home(),
@@ -64,6 +76,9 @@ class MyApp extends StatelessWidget {
         final builder = routes[settings.name];
         return builder != null ? MaterialPageRoute(builder: builder) : null;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
