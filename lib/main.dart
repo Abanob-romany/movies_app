@@ -99,19 +99,7 @@ class MyApp extends StatelessWidget {
 
         final builder = routes[settings.name];
         return builder != null ? MaterialPageRoute(builder: builder) : null;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
       },
     );
   }
