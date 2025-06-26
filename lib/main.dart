@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Home.routeName,
+      initialRoute: Auth.routeName,
       onGenerateRoute: (settings) {
         if (settings.name == MovieDetails.routeName) {
           final movie = settings.arguments as Movie;
