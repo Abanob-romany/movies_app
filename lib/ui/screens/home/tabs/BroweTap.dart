@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:movies_app/ui/utils/app_colors.dart';
 import 'package:movies_app/ui/screens/movie%20details/movie_details.dart';
-import '../../../../../API/Models/MovieModel.dart';
+import '../../../../API/Models/MovieModel.dart';
 
 class Browetap extends StatefulWidget {
   const Browetap({super.key});
@@ -126,8 +126,6 @@ class _BrowetapState extends State<Browetap> {
                           builder: (context) => MovieDetails(movie: movieObj),
                         ),
                       );
-                    } else {
-                      print('Failed to load movie details');
                     }
                   } catch (e) {
                     print('Error fetching full details: $e');

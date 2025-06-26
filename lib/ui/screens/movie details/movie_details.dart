@@ -4,15 +4,26 @@ import 'package:movies_app/ui/utils/app_assets.dart';
 import 'package:movies_app/ui/utils/app_colors.dart';
 import 'package:movies_app/ui/utils/app_styles.dart';
 
-class MovieDetails extends StatelessWidget {
-  static const String routeName = '/movie-details';
-  static const List<String> screenShots = [
-    'assets/images/large-screenshot1.png',
-    'assets/images/large-screenshot2.png',
-    'assets/images/large-screenshot3.png',
-  ];
+import '../../../API/Models/MovieModel.dart';
 
-  const MovieDetails({super.key});
+class MovieDetails extends StatefulWidget {
+  static const String routeName = '/movie-details';
+  final Movie movie;
+
+  const MovieDetails({super.key, required this.movie});
+
+  @override
+  State<MovieDetails> createState() => _MovieDetailsState();
+}
+
+class _MovieDetailsState extends State<MovieDetails> {
+  late Movie movie;
+
+  @override
+  void initState() {
+    super.initState();
+    movie = widget.movie;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,42 +40,27 @@ class MovieDetails extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.7,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(AppAssets.doctor1),
+                        image: NetworkImage(movie.coverImage),
                         fit: BoxFit.cover,
                       ),
                     ),
                     child: Stack(
                       children: [
-                        Image(
-                          image: AssetImage(AppAssets.doctor2),
-                          fit: BoxFit.fill,
-                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               IconButton(
-                                icon: Icon(
-                                  Icons.arrow_back_ios,
-                                  color: Colors.white,
-                                  size: 32,
-                                ),
+                                icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 32),
                                 onPressed: () => Navigator.pop(context),
                               ),
                               IconButton(
-                                icon: Icon(
-                                  Icons.bookmark,
-                                  color: Colors.white,
-                                  size: 32,
-                                ),
+                                icon: Icon(Icons.bookmark, color: Colors.white, size: 32),
                                 onPressed: () {},
                               ),
                             ],
                           ),
-                        ),
-                        Center(
-                          child: Image(image: AssetImage(AppAssets.start)),
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -72,22 +68,16 @@ class MovieDetails extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(16.0),
                               child: Text(
-                                'Doctor Strange in the Multiverse of Madness',
-                                style: AppStyle.bold24Black.copyWith(
-                                  color: Colors.white,
-                                ),
+                                movie.title,
+                                style: AppStyle.bold24Black.copyWith(color: Colors.white),
                                 textAlign: TextAlign.center,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 16.0,
-                              ),
+                              padding: const EdgeInsets.symmetric(horizontal: 16.0),
                               child: Text(
-                                '2022',
-                                style: AppStyle.bold20Black.copyWith(
-                                  color: Colors.white,
-                                ),
+                                movie.year,
+                                style: AppStyle.bold20Black.copyWith(color: Colors.white),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -114,30 +104,28 @@ class MovieDetails extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ratingBuilder(
-                          icon: Icons.heart_broken_rounded,
-                          text: '15',
-                        ),
-                        ratingBuilder(
-                          icon: Icons.access_time_filled,
-                          text: '90',
-                        ),
-                        ratingBuilder(icon: Icons.star_rounded, text: '8.5'),
+                        ratingBuilder(icon: Icons.heart_broken_rounded, text: '15'),
+                        ratingBuilder(icon: Icons.access_time_filled, text: movie.runtime),
+                        ratingBuilder(icon: Icons.star_rounded, text: movie.rating),
                       ],
                     ),
                     SizedBox(height: 16),
+                    Text('Summary', style: AppStyle.bold24White),
+                    Text(movie.summary, style: AppStyle.bold20White),
+                    SizedBox(height: 16),
                     Text('Screen shots', style: AppStyle.bold24White),
-                    ListView.builder(
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4.0),
-                          child: Image(image: AssetImage(screenShots[index])),
-                        );
-                      },
-                      itemCount: screenShots.length,
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                    ),
+                    if (movie.screenshots.isNotEmpty)
+                      ListView.builder(
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 4.0),
+                            child: Image.network(movie.screenshots[index]),
+                          );
+                        },
+                        itemCount: movie.screenshots.length,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                      ),
                   ],
                 ),
               ),
