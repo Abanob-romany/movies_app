@@ -3,12 +3,27 @@ import 'package:movies_app/ui/screens/auth/shared/elevated_button_builder.dart';
 import 'package:movies_app/ui/utils/app_assets.dart';
 import 'package:movies_app/ui/utils/app_colors.dart';
 import 'package:movies_app/ui/utils/app_styles.dart';
+
 import '../../../API/Models/MovieModel.dart';
-class MovieDetails extends StatelessWidget {
+
+class MovieDetails extends StatefulWidget {
   static const String routeName = '/movie-details';
   final Movie movie;
 
   const MovieDetails({super.key, required this.movie});
+
+  @override
+  State<MovieDetails> createState() => _MovieDetailsState();
+}
+
+class _MovieDetailsState extends State<MovieDetails> {
+  late Movie movie;
+
+  @override
+  void initState() {
+    super.initState();
+    movie = widget.movie;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,14 +93,14 @@ class MovieDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10),
                     buildElevatedButton(
                       text: 'Watch',
                       onPressed: () {},
                       backgroundColor: AppColors.red,
                       style: AppStyle.bold20White,
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -94,10 +109,10 @@ class MovieDetails extends StatelessWidget {
                         ratingBuilder(icon: Icons.star_rounded, text: movie.rating),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Text('Summary', style: AppStyle.bold24White),
                     Text(movie.summary, style: AppStyle.bold20White),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Text('Screen shots', style: AppStyle.bold24White),
                     if (movie.screenshots.isNotEmpty)
                       ListView.builder(
@@ -109,7 +124,7 @@ class MovieDetails extends StatelessWidget {
                         },
                         itemCount: movie.screenshots.length,
                         shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
+                        physics: NeverScrollableScrollPhysics(),
                       ),
                   ],
                 ),
@@ -131,7 +146,7 @@ class MovieDetails extends StatelessWidget {
       child: Row(
         children: [
           Icon(icon, color: AppColors.primaryColor, size: 24),
-          const SizedBox(width: 8),
+          SizedBox(width: 8),
           Text(text, style: AppStyle.bold20White),
         ],
       ),

@@ -17,12 +17,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int tabIndex = 0;
-
-  // ✅ List of tab screens
   final List<Widget> screens = [
     HomeTab(),
     SearchTab(),
-    BrowseTab(),
+    Browetap(),
     ProfileTab(),
   ];
 
