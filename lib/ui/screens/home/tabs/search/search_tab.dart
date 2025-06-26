@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:movies_app/ui/utils/app_assets.dart';
 import 'package:movies_app/ui/utils/app_colors.dart';
 
-class Searchtab extends StatefulWidget {
-  const Searchtab({super.key});
+class SearchTab extends StatefulWidget {
+  const SearchTab({super.key});
 
   @override
-  State<Searchtab> createState() => _SearchtabState();
+  State<SearchTab> createState() => _SearchtabState();
 }
 
-class _SearchtabState extends State<Searchtab> {
+class _SearchtabState extends State<SearchTab> {
   final TextEditingController searchController = TextEditingController();
   final List<String> fakeMovies = [
     'Inception',

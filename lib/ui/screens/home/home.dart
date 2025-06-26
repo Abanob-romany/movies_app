@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/ui/screens/home/tabs/BroweTap.dart';
-import 'package:movies_app/ui/screens/home/tabs/HomeTab.dart';
-import 'package:movies_app/ui/screens/home/tabs/ProfileTab.dart';
-import 'package:movies_app/ui/screens/home/tabs/SearchTab.dart';
+import 'package:movies_app/ui/screens/home/tabs/browse/browse_tab.dart';
+import 'package:movies_app/ui/screens/home/tabs/home/home_tab.dart';
+import 'package:movies_app/ui/screens/home/tabs/profile/profile_tab.dart';
+import 'package:movies_app/ui/screens/home/tabs/search/search_tab.dart';
 import 'package:movies_app/ui/utils/app_colors.dart';
 import '../../utils/app_assets.dart';
 
@@ -21,9 +21,9 @@ class _HomeState extends State<Home> {
   // ✅ List of tab screens
   final List<Widget> screens = [
     HomeTab(),
-    Searchtab(),
-    Browetap(),
-    Profiletab(),
+    SearchTab(),
+    BrowseTab(),
+    ProfileTab(),
   ];
 
   @override

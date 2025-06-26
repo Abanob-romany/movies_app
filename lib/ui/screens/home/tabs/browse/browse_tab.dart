@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-class Profiletab extends StatelessWidget {
-  const Profiletab({super.key});
+class BrowseTab extends StatelessWidget {
+  const BrowseTab({super.key});
 
   @override
   Widget build(BuildContext context) {

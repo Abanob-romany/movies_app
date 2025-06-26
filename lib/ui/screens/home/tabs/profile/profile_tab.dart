@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-class Browetap extends StatelessWidget {
-  const Browetap({super.key});
+class ProfileTab extends StatelessWidget {
+  const ProfileTab({super.key});
 
   @override
   Widget build(BuildContext context) {

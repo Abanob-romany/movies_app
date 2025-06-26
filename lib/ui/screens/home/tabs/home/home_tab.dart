@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/ui/screens/home/tabs/BroweTap.dart';
 import 'package:movies_app/ui/utils/app_colors.dart';
 import 'package:movies_app/ui/utils/app_styles.dart';
-import '../../../utils/app_assets.dart';
+import '../../../../utils/app_assets.dart';
 
 class HomeTab extends StatefulWidget {
   static const String routeName = '/home';

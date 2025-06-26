@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/ui/screens/auth/auth.dart';
 import 'package:movies_app/ui/screens/auth/forget%20password/forget_pass.dart';
+import 'package:movies_app/ui/screens/auth/login/login.dart';
 import 'package:movies_app/ui/screens/auth/regester/regester.dart';
 import 'package:movies_app/ui/screens/home/home.dart';
 import 'package:movies_app/ui/screens/movie%20details/movie_details.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: MovieDetails.routeName,
+      initialRoute: Onboarding.routeName,
 
       routes: {
         Onboarding.routeName: (context) => Onboarding(),
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         MovieDetails.routeName: (context) => MovieDetails(),
         ForgetPass.routeName: (context) => ForgetPass(),
         Regester.routeName: (context) => const Regester(),
+        Login.routeName: (context) => const Login(),
       },
     );
   }
